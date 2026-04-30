@@ -1,0 +1,19 @@
+[package]
+name = "smpc-protocols"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "MPC protocol implementations for smpc-rs."
+
+[dependencies]
+async-trait.workspace = true
+rand_chacha.workspace = true
+rand_core.workspace = true
+sha2.workspace = true
+smpc-core = { path = "../smpc-core" }
+zeroize.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+smpc-net = { path = "../smpc-net" }
+tokio.workspace = true

@@ -1,0 +1,52 @@
+[package]
+name = "smpc-rs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Production-minded Rust SDK for secure multiparty computation."
+readme = "README.md"
+
+[workspace]
+members = [
+    ".",
+    "crates/smpc-core",
+    "crates/smpc-net",
+    "crates/smpc-protocols",
+    "crates/smpc-testing",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[workspace.dependencies]
+async-trait = "0.1"
+bytes = "1"
+criterion = "0.5"
+proptest = "1"
+rand_chacha = "0.3"
+rand_core = { version = "0.6", features = ["getrandom"] }
+rustls = "0.23"
+rustls-pemfile = "1"
+rustls-pki-types = "1"
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-rustls = "0.26"
+zeroize = { version = "1", features = ["derive"] }
+
+[dependencies]
+smpc-core = { path = "crates/smpc-core" }
+smpc-net = { path = "crates/smpc-net" }
+smpc-protocols = { path = "crates/smpc-protocols" }
+
+[dev-dependencies]
+criterion.workspace = true
+smpc-testing = { path = "crates/smpc-testing" }
+tokio.workspace = true
+
+[[bench]]
+name = "basic"
+harness = false

@@ -1,0 +1,22 @@
+[package]
+name = "smpc-rs-fuzz"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+smpc-core = { path = "../crates/smpc-core" }
+smpc-net = { path = "../crates/smpc-net" }
+
+[[bin]]
+name = "frame_decode"
+path = "fuzz_targets/frame_decode.rs"
+test = false
+doc = false
+bench = false

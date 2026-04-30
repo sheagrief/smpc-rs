@@ -1,0 +1,12 @@
+[package]
+name = "smpc-testing"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Testing utilities for smpc-rs."
+
+[dependencies]
+smpc-core = { path = "../smpc-core" }
+smpc-net = { path = "../smpc-net" }
+smpc-protocols = { path = "../smpc-protocols" }
+tokio.workspace = true
